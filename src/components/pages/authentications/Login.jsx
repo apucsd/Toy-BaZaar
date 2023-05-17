@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
+  const { logInUser } = useContext(AuthContext);
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    logInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        toast.success("Your login has successful");
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast.error(error.message.split(":")[1]);
+      });
+  };
   return (
     <div>
       <section className="bg-white">
         <div className="container flex items-center justify-center h-[80vh] px-6 mx-auto">
-          <form className="w-full max-w-md">
+          <form onSubmit={handleLogin} className="w-full max-w-md">
             <div className="flex justify-center mx-auto text-5xl text-[#0060f0e6]">
               <FaUser></FaUser>
             </div>
@@ -65,12 +84,11 @@ const Login = () => {
             </div>
 
             <div className="mt-6">
-              <button
-                type="submit"
+              <input
                 className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-              >
-                Login
-              </button>
+                type="submit"
+                value="Login"
+              />
 
               <div className="mt-6 text-center ">
                 <p>
@@ -81,6 +99,7 @@ const Login = () => {
             </div>
           </form>
         </div>
+        <SocialLogin></SocialLogin>
       </section>
     </div>
   );

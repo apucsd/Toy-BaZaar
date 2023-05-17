@@ -1,12 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+
+import "sweetalert2/dist/sweetalert2.css";
+import { updateProfile } from "firebase/auth";
+import { toast } from "react-hot-toast";
+import SocialLogin from "./SocialLogin";
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+    console.log(email, name, photo, password, confirmPassword);
+    if (password === confirmPassword) {
+      createUser(email, password)
+        .then((result) => {
+          // console.log(result.user);
+          toast.success("Your account has created successfully");
+          updateProfile(result.user)
+            .then(() => {})
+            .catch(() => {});
+        })
+        .catch((error) => {
+          toast.error(error.message.split(":")[1]);
+          // console.log(error.message.split(":")[1]);
+        });
+    } else {
+      toast.error("Confirm password is not matching");
+    }
+  };
   return (
     <div>
       <section className="bg-white">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form className="w-full max-w-md">
+          <form onSubmit={handleRegister} className="w-full max-w-md">
             <div className="flex justify-center mx-auto text-5xl text-[#0060f0e6]">
               <FaUser></FaUser>
             </div>
@@ -158,6 +192,7 @@ const Register = () => {
           </form>
         </div>
       </section>
+      <SocialLogin></SocialLogin>
     </div>
   );
 };
