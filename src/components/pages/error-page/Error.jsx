@@ -20,7 +20,7 @@ const Error = () => {
         />
         <div>
           <h2>Status: {status}</h2>
-          <h3>Message: {error.message}</h3>
+          <h3>Message: {error?.message}</h3>
         </div>
       </div>
     </div>
