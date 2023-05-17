@@ -6,8 +6,7 @@ import { Link, useRouteError } from "react-router-dom";
 const Error = () => {
   const { status, error } = useRouteError();
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="py-12">
       <div className="text-center space-y-3">
         <div className="text-start">
           <Link className="" to="/">
@@ -24,7 +23,6 @@ const Error = () => {
           <h3>Message: {error.message}</h3>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

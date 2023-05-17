@@ -1,71 +1,38 @@
+/* eslint-disable no-irregular-whitespace */
 import React from "react";
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-white border-t-2 my-8">
-      <div className="max-w-screen-xl px-4 pt-16 pb-8 mx-auto sm:px-6 lg:px-8 lg:pt-24">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl">
-            Ｔｏｙ ＢａＺａａｒ
-          </h2>
-
-          <p className="max-w-sm mx-auto mt-4 text-gray-500">
-            Discover a Wonderland of Endless Joy: Unleash Boundless Fun and
-            Imagination at the Grandest Toy BaZaar Experience!
-          </p>
-
-          <form className="mt-4 md:w-[30%] mx-auto text-center">
-            <div className="flex flex-col justify-center gap-4 sm:flex-row lg:flex-col lg:items-start">
-              <label htmlFor="email" className="sr-only">
-                Email
-              </label>
-
-              <input
-                className="w-full rounded-full border-gray-200 px-6 py-3 shadow-lg"
-                type="email"
-                placeholder="Enter your email"
-              />
-
-              <button className="myBtn" type="submit">
-                Subscribe
-              </button>
-            </div>
-          </form>
+    <footer className="footer p-10 bg-base-200 text-base-content grid md:grid-cols-3 grid-cols-2">
+      <div>
+        <div className="text-center my-2">
+          <div>
+            <h1 className="text-2xl tracking-wide font-bold">
+              Ｔｏｙ ＢａＺａａｒ
+            </h1>
+            <p className="text-sky-400 my-2 ">
+              ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
+              ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
+              ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
+            </p>
+          </div>
         </div>
+      </div>
 
+      <div>
+        <span className="footer-title">Company</span>
+        <a className="link link-hover">About us</a>
+        <a className="link link-hover">Contact</a>
+      </div>
+      <div>
+        <span className="footer-title">Legal</span>
+        <a className="link link-hover">Terms of use</a>
+        <a className="link link-hover">Privacy policy</a>
+        <a className="link link-hover">Cookie policy</a>
+      </div>
+      <div>
         <div className="pt-8 mt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
-          <nav aria-label="Footer Navigation - Support">
-            <ul className="flex flex-wrap justify-center gap-4 text-xs lg:justify-end">
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-500 transition hover:opacity-75"
-                >
-                  Terms & Conditions
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-500 transition hover:opacity-75"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-500 transition hover:opacity-75"
-                >
-                  Cookies
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <ul className="flex justify-center gap-6 mt-8 sm:mt-0 lg:justify-end">
+          <ul className="flex gap-6 mt-8 sm:mt-0  justify-center">
             <li>
               <a
                 href="/"
@@ -183,6 +150,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <p className="text-sm text-gray-600">
+          &copy; {new Date().getFullYear()} Toy BaZaar. All rights reserved.
+        </p>
       </div>
     </footer>
   );
