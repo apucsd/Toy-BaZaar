@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.lato {
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "EB Garamond", serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+.myBtn {
+  @apply bg-gradient-to-r from-blue-500 to-pink-500 hover:from-fuchsia-500 hover:to-purple-500 text-white font-bold py-2 px-4 rounded-lg;
+}
