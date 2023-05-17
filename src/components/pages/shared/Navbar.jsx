@@ -1,9 +1,38 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-irregular-whitespace */
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../assets/Screenshot 2023-05-17 213319.jpg";
+
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/dist/sweetalert2.css";
+import { toast } from "react-hot-toast";
+import { Tooltip } from "primereact/tooltip";
+import { Button } from "primereact/button";
 
 const Navbar = () => {
+  const { user, logOutUser } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure ?",
+
+      // icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "39B5E0",
+      cancelButtonColor: "#A31ACB",
+      confirmButtonText: "Yes, Logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOutUser()
+          .then(() => {
+            toast.success("Your logout is successful");
+          })
+          .catch((er) => {});
+      }
+    });
+  };
   return (
     <div>
       <div className="text-center my-2">
@@ -48,12 +77,16 @@ const Navbar = () => {
               <li>
                 <Link to="/all-toys">All Toys</Link>
               </li>
-              <li>
-                <Link to="/my-toys">My Toys</Link>
-              </li>
-              <li>
-                <Link to="/add-toy">Add Toy</Link>
-              </li>
+              {user && (
+                <span>
+                  <li>
+                    <Link to="/my-toys">My Toys</Link>
+                  </li>
+                  <li>
+                    <Link to="/add-toy">Add Toy</Link>
+                  </li>
+                </span>
+              )}
               <li>
                 <Link to="/blog">Blog</Link>
               </li>
@@ -93,34 +126,38 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/my-toys"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "border-b-2 border-blue-400"
-                    : ""
-                }
-              >
-                My Toys
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/add-toy"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "border-b-2 border-blue-400"
-                    : ""
-                }
-              >
-                Add Toys
-              </NavLink>
-            </li>
+            {user && (
+              <span className="flex gap-5">
+                <li>
+                  <NavLink
+                    to="/my-toys"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "border-b-2 border-blue-400"
+                        : ""
+                    }
+                  >
+                    My Toys
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/add-toy"
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "border-b-2 border-blue-400"
+                        : ""
+                    }
+                  >
+                    Add Toys
+                  </NavLink>
+                </li>
+              </span>
+            )}
             <li>
               <NavLink
                 to="/blog"
@@ -138,9 +175,41 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <span className="myBtn p">
-            <Link to="/login">Login</Link>
-          </span>
+          {user ? (
+            <div className="flex gap-4">
+              <div className="relative">
+                {/* <img
+                  data-tip={user.displayName}
+                  className="tooltip object-cover w-10 h-10 rounded-full ring ring-gray-300 dark:ring-gray-600"
+                  src={user?.photoURL}
+                  alt=""
+                /> */}
+                <div className="dropdown dropdown-hover">
+                  <label tabIndex={0}>
+                    <img
+                      className=" object-cover w-10 h-10 rounded-full ring ring-gray-300 dark:ring-gray-600"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content menu p-2 shadow bg-base-100 rounded whitespace-nowrap"
+                  >
+                    <li className="">{user?.displayName}</li>
+                  </ul>
+                </div>
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 absolute right-0 ring-1 ring-white bottom-0"></span>
+              </div>
+              <span onClick={handleLogOut} className="myBtn ">
+                <Link to="/login">Logout</Link>
+              </span>
+            </div>
+          ) : (
+            <span className="myBtn ">
+              <Link to="/login">Login</Link>
+            </span>
+          )}
         </div>
       </div>
     </div>

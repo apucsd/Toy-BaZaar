@@ -24,7 +24,10 @@ const Register = () => {
         .then((result) => {
           // console.log(result.user);
           toast.success("Your account has created successfully");
-          updateProfile(result.user)
+          updateProfile(result.user, {
+            displayName: name,
+            photoURL: photo,
+          })
             .then(() => {})
             .catch(() => {});
         })
@@ -64,6 +67,7 @@ const Register = () => {
               </span>
 
               <input
+                required
                 type="text"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
@@ -89,6 +93,7 @@ const Register = () => {
               </span>
 
               <input
+                required
                 type="url"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Photo URL"
@@ -115,6 +120,7 @@ const Register = () => {
               </span>
 
               <input
+                required
                 type="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
@@ -141,6 +147,7 @@ const Register = () => {
               </span>
 
               <input
+                required
                 type="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
@@ -167,6 +174,7 @@ const Register = () => {
               </span>
 
               <input
+                required
                 type="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Confirm Password"

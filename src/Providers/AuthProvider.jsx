@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import {
   GoogleAuthProvider,
@@ -40,6 +40,15 @@ const AuthProvider = ({ children }) => {
 
     googleLoginUser,
   };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoader(false);
+    });
+    return () => {
+      return unsubscribe();
+    };
+  }, []);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

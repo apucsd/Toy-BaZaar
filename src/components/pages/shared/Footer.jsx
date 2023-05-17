@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content grid md:grid-cols-3 grid-cols-2">
+    <footer className="footer p-10 bg-base-200 text-base-content grid md:grid-cols-3 grid-cols-1 justify-center text-center">
       <div>
         <div className="text-center my-2">
           <div>
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div>
         <div className="pt-8 mt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
-          <ul className="flex gap-6 mt-8 sm:mt-0  justify-center">
+          <ul className="md:flex flex gap-2 mt-8  md:justify-center justify-start">
             <li>
               <a
                 href="/"
