@@ -109,7 +109,7 @@ export default function AddToy() {
           <textarea
             placeholder="Details "
             className="input input-bordered input-info w-full "
-            {...register("textAreaID")}
+            {...register("details")}
           />
         </div>
 
