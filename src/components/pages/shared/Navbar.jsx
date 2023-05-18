@@ -13,7 +13,7 @@ import logo from "../../../assets/White logo - no background.png";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleLogOut = () => {
     Swal.fire({
@@ -179,12 +179,6 @@ const Navbar = () => {
           {user ? (
             <div className="flex gap-4 items-center">
               <div className="relative">
-                {/* <img
-                  data-tip={user.displayName}
-                  className="tooltip object-cover w-10 h-10 rounded-full ring ring-gray-300 dark:ring-gray-600"
-                  src={user?.photoURL}
-                  alt=""
-                /> */}
                 <div className="dropdown dropdown-hover">
                   <label tabIndex={0}>
                     <img
@@ -195,7 +189,7 @@ const Navbar = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="dropdown-content menu p-2 shadow bg-base-100 rounded whitespace-nowrap"
+                    className="dropdown-content menu p-2 shadow myBg rounded whitespace-nowrap"
                   >
                     <li className="">{user?.displayName}</li>
                   </ul>

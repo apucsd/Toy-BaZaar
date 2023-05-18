@@ -14,7 +14,7 @@ const AllToys = () => {
   // View Details button
   const handleSearch = (event) => {
     const text = event.target.value;
-    console.log(text);
+    // console.log(text);
     if (text) {
       fetch(`http://localhost:5000/toys/search/${text}`)
         .then((res) => res.json())

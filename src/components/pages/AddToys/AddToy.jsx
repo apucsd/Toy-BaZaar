@@ -44,7 +44,7 @@ export default function AddToy() {
   };
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <div className="my-8 bg-gray-100 p-12">
+    <div className="my-8 bg-blue-50 p-12">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* register your input into the hook by invoking the "register" function */}
         <div className="flex gap-1">
@@ -114,7 +114,7 @@ export default function AddToy() {
         </div>
 
         <div className="text-center">
-          <input className="myBtn" type="submit" />
+          <input className="myBtn cursor-pointer" type="submit" />
         </div>
       </form>
     </div>

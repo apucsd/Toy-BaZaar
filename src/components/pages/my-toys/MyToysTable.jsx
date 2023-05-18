@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
   const {
@@ -35,7 +36,7 @@ const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
       </td>
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium cursor-pointer">
         <span className="inline-block rounded-full py-1 px-3 text-xs font-semibold text-white bg-pink-500 cursor-pointer">
-          All Details
+          <Link to={`/toys/${_id}`}>All Details</Link>
         </span>
       </td>
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium ">

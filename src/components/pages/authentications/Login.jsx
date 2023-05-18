@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const { logInUser } = useContext(AuthContext);
+  const location = useLocation();
+  // console.log(location);
+  const from = location?.state?.from?.pathname || "/";
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,8 +18,10 @@ const Login = () => {
     const password = form.password.value;
     logInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
+
         toast.success("Your login has successful");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
