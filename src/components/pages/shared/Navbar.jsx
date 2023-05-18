@@ -35,13 +35,13 @@ const Navbar = () => {
     });
   };
   return (
-    <div>
+    <div className="">
       <div className="text-center my-2">
         <div>
-          <h1 className="text-2xl md:text-5xl tracking-wide font-bold">
+          <h1 className="text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-pink-500 p-4 tracking-wide font-bold">
             Ｔｏｙ ＢａＺａａｒ
           </h1>
-          <p className="text-sky-400 my-2 ">
+          <p className="text-sky-400  my-2 ">
             ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
             ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
             ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
@@ -49,7 +49,7 @@ const Navbar = () => {
         </div>
         <hr /> <hr />
       </div>
-      <div className="navbar bg-base-100 p-3 lato">
+      <div className="navbar myBg text-white p-3 lato my-3">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -70,7 +70,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gradient-to-r from-blue-500 to-blue-400 rounded-box w-52 "
             >
               <li>
                 <Link to="/">Home</Link>

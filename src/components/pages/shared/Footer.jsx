@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content grid md:grid-cols-3 grid-cols-1 justify-center text-center">
+    <footer className="footer p-10 myBg text-white  grid md:grid-cols-3 grid-cols-1 justify-center text-center">
       <div>
         <div className="text-center my-2">
           <div>
@@ -31,14 +31,14 @@ const Footer = () => {
         <a className="link link-hover">Cookie policy</a>
       </div>
       <div>
-        <div className="pt-8 mt-16 border-t border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
+        <div className="pt-8 mt-16 border-t text-white border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
           <ul className="md:flex flex gap-2 mt-8  md:justify-center justify-start">
             <li>
               <a
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -62,7 +62,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Instagram</span>
 
@@ -86,7 +86,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Twitter</span>
 
@@ -106,7 +106,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">GitHub</span>
 
@@ -130,7 +130,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-gray-700 transition hover:opacity-75"
+                className="text-white transition hover:opacity-75"
               >
                 <span className="sr-only">Dribbble</span>
 
@@ -150,7 +150,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-white">
           &copy; {new Date().getFullYear()} Toy BaZaar. All rights reserved.
         </p>
       </div>
