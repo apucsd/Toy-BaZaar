@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import MyToysTable from "./MyToysTable";
 import { toast } from "react-hot-toast";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/dist/sweetalert2.css";
 
 const MyToys = () => {
   const [recall, setRecall] = useState(false);
@@ -42,6 +44,34 @@ const MyToys = () => {
         }
       });
   };
+  const handleDelete = (_id) => {
+    console.log(_id);
+    fetch(`http://localhost:5000/toys/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        Swal.fire({
+          title: "Are you sure ?",
+
+          // icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "39B5E0",
+          cancelButtonColor: "#A31ACB",
+          confirmButtonText: "Yes, Logout",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            if (data.deletedCount > 0) {
+              toast.success("Your toy is deleted successfully");
+              const remaining = myToys.filter((myToy) => myToy._id != _id);
+              setMyToys(remaining);
+            }
+          }
+        });
+      });
+  };
+
   return (
     <div>
       <div>
@@ -78,6 +108,7 @@ const MyToys = () => {
             {myToys.map((myToy) => (
               <MyToysTable
                 handleUpdate={handleUpdate}
+                handleDelete={handleDelete}
                 key={myToy._id}
                 myToy={myToy}
               ></MyToysTable>

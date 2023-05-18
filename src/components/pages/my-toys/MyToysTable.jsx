@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const MyToysTable = ({ myToy, handleUpdate }) => {
+const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
   const {
     _id,
     toyName,
@@ -121,7 +121,10 @@ const MyToysTable = ({ myToy, handleUpdate }) => {
         </div>
       </td>
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium ">
-        <span className="inline-block rounded-full py-1 px-3 text-xs font-semibold text-white bg-red-500 cursor-pointer">
+        <span
+          onClick={() => handleDelete(_id)}
+          className="inline-block rounded-full py-1 px-3 text-xs font-semibold text-white bg-red-500 cursor-pointer"
+        >
           Delete
         </span>
       </td>
