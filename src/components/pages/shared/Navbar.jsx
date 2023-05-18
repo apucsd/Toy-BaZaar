@@ -9,6 +9,7 @@ import "sweetalert2/dist/sweetalert2.css";
 import { toast } from "react-hot-toast";
 import { Tooltip } from "primereact/tooltip";
 import { Button } from "primereact/button";
+import logo from "../../../assets/White logo - no background.png";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
@@ -176,7 +177,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <div className="relative">
                 {/* <img
                   data-tip={user.displayName}
