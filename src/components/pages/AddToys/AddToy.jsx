@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Creatable, { useCreatable } from "react-select/creatable";
+import { toast } from "react-hot-toast";
 
 export default function AddToy() {
   const { user } = useContext(AuthContext);
@@ -13,18 +14,33 @@ export default function AddToy() {
     formState: { errors },
   } = useForm();
 
-  console.log(watch("example")); // watch input value by passing the name of it
+  // console.log(watch("example")); // watch input value by passing the name of it
   const options = [
-    { value: "chocolate", label: "Chocolate" },
-    { value: "strawberry", label: "Strawberry" },
-    { value: "vanilla", label: "Vanilla" },
+    { value: "superheroes", label: "Superheroes" },
+    { value: "Anime and Manga", label: "Anime and Manga" },
+    { value: "Video Game Characters", label: "Video Game Characters" },
+    { value: "Movie Characters", label: "Movie Characters" },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
   // console.log(selectedOption);
   const onSubmit = (data) => {
     data.categories = selectedOption;
-    console.log(data);
+    // console.log(data);
+    fetch("http://localhost:5000/toys", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.insertedId) {
+          toast.success("A new toy has successfully added");
+        }
+      });
   };
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
