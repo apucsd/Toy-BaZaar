@@ -38,13 +38,27 @@ const Details = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-around"></div>
-          <ul>
-            <span className="font-bold text-black"> Categories:</span>
-            {toy?.categories.map((category, index) => (
-              <li key={index}>{category.label}</li>
-            ))}
-          </ul>
+          <div className="flex flex-wrap justify-around">
+            <button className="bg-fuchsia-500 hover:bg-purple-600 text-white py-3 px-6 rounded-full shadow-lg">
+              <span className="flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-6 h-6 mr-2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <path d="M12 8v8M8 12h8" />
+                </svg>
+                Buy Now
+              </span>
+            </button>
+          </div>
         </div>
         <div>
           <img

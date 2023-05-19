@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProvider";
@@ -16,17 +17,18 @@ export default function AddToy() {
 
   // console.log(watch("example")); // watch input value by passing the name of it
   const options = [
-    { value: "superheroes", label: "Superheroes" },
-    { value: "Anime and Manga", label: "Anime and Manga" },
-    { value: "Video Game Characters", label: "Video Game Characters" },
-    { value: "Movie Characters", label: "Movie Characters" },
+    { value: "Bears", label: "Bears" },
+    { value: "Horses", label: "Horses" },
+    { value: "Elephants", label: "Elephants" },
+    { value: "Others", label: "Others" },
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
   // console.log(selectedOption);
   const onSubmit = (data) => {
-    data.categories = selectedOption;
-    // console.log(data);
+    // console.log(selectedOption);
+    data.category = selectedOption;
+
     fetch("https://toy-bazaar-server.vercel.app/toys", {
       method: "POST",
       headers: {
@@ -39,6 +41,7 @@ export default function AddToy() {
         // console.log(data);
         if (data.insertedId) {
           toast.success("A new toy has successfully added");
+          reset();
         }
       });
   };
@@ -49,11 +52,13 @@ export default function AddToy() {
         {/* register your input into the hook by invoking the "register" function */}
         <div className="flex gap-1">
           <input
+            required
             placeholder="Toy name"
             {...register("toyName")}
             className="input input-bordered input-info w-full"
           />
           <input
+            required
             type="url"
             placeholder="Image URL"
             {...register("imgURL")}
@@ -62,11 +67,13 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <input
+            required
             value={user?.displayName}
             {...register("sellerName")}
             className="input input-bordered input-info w-full"
           />
           <input
+            required
             value={user?.email}
             {...register("sellerEmail")}
             className="input input-bordered input-info w-full"
@@ -74,11 +81,13 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <input
+            required
             placeholder="Price"
             {...register("price")}
             className="input input-bordered input-info w-full"
           />
           <input
+            required
             type="date"
             {...register("date")}
             className="input input-bordered input-info w-full"
@@ -86,11 +95,13 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <input
+            required
             placeholder="Ratings"
             {...register("rating")}
             className="input input-bordered input-info w-full"
           />
           <input
+            required
             placeholder="Available quantity"
             {...register("quantity")}
             className="input input-bordered input-info w-full"
@@ -102,7 +113,6 @@ export default function AddToy() {
             placeholder="Select Category..."
             options={options}
             onChange={setSelectedOption}
-            isMulti
           />
         </div>
         <div className="flex gap-1">
@@ -114,7 +124,7 @@ export default function AddToy() {
         </div>
 
         <div className="text-center">
-          <input className="myBtn cursor-pointer" type="submit" />
+          <input required className="myBtn cursor-pointer" type="submit" />
         </div>
       </form>
     </div>
