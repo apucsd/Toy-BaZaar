@@ -6,7 +6,8 @@ import "aos/dist/aos.css";
 const About = () => {
   AOS.init({ duration: 1000 });
   return (
-    <div className="  py-10">
+    <div className=" my-12 py-10">
+      <hr className="my-4" />
       <div
         data-aos="fade-up"
         className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
