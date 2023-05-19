@@ -31,7 +31,7 @@ export default function AddToy() {
     // console.log(selectedOption);
     data.category = selectedOption;
 
-    fetch("https://toy-bazaar-server.vercel.app/toys", {
+    fetch("http://localhost:5000/toys", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

@@ -15,7 +15,7 @@ const MyToys = () => {
     fetch(`https://toy-bazaar-server.vercel.app/toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setMyToys(data);
       });
   }, [user, recall]);
@@ -47,7 +47,7 @@ const MyToys = () => {
       });
   };
   const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
     fetch(`https://toy-bazaar-server.vercel.app/toys/${_id}`, {
       method: "DELETE",
     })

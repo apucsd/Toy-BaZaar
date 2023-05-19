@@ -8,7 +8,8 @@ const AllToys = () => {
 
   useTitle("All Toys");
   useEffect(() => {
-    fetch("https://toy-bazaar-server.vercel.app/toys")
+    // using static limit 20
+    fetch("https://toy-bazaar-server.vercel.app/toys?limit=20")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
@@ -17,14 +18,14 @@ const AllToys = () => {
   const handleSearch = (event) => {
     const text = event.target.value;
     // console.log(text);
-    if (text) {
-      fetch(`https://toy-bazaar-server.vercel.app/toys/search/${text}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setToys(data);
-        });
-    }
+    // if (text) {
+    //   fetch(`https://toy-bazaar-server.vercel.app/toys/search/${text}`)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //       setToys(data);
+    //     });
+    // }
   };
   return (
     <div className="overflow-x-auto">
