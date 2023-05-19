@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
+import useTitle from "../../../custom hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login");
   const { logInUser } = useContext(AuthContext);
   const location = useLocation();
   // console.log(location);

@@ -8,7 +8,9 @@ import "sweetalert2/dist/sweetalert2.css";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
+import useTitle from "../../../custom hooks/useTitle";
 const Register = () => {
+  useTitle("Register");
   const { createUser } = useContext(AuthContext);
   const handleRegister = (event) => {
     event.preventDefault();

@@ -4,8 +4,10 @@ import MyToysTable from "./MyToysTable";
 import { toast } from "react-hot-toast";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/dist/sweetalert2.css";
+import useTitle from "../../../custom hooks/useTitle";
 
 const MyToys = () => {
+  useTitle("My Toys");
   const [recall, setRecall] = useState(false);
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);

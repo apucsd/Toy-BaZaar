@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Creatable, { useCreatable } from "react-select/creatable";
 import { toast } from "react-hot-toast";
+import useTitle from "../../../custom hooks/useTitle";
 
 export default function AddToy() {
+  useTitle("Add Toy");
   const { user } = useContext(AuthContext);
   // console.log(user);
   const {

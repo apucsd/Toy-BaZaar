@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AllToysTable from "./AllToysTable";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../../custom hooks/useTitle";
 
 const AllToys = () => {
-  const loadedToys = useLoaderData();
-  const [toys, setToys] = useState(loadedToys);
-  // Seller: (if available) show the name of the person who posted the toy
-  // Toy Name
-  // Sub-category
-  // Price
-  // Available Quantity
+  const [toys, setToys] = useState([]);
+
+  useTitle("All Toys");
+  useEffect(() => {
+    fetch("https://toy-bazaar-server.vercel.app/toys")
+      .then((res) => res.json())
+      .then((data) => setToys(data));
+  }, []);
 
   // View Details button
   const handleSearch = (event) => {
