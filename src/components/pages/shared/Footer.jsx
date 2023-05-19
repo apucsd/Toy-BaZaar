@@ -7,6 +7,26 @@ const Footer = () => {
       <div>
         <div className="text-center my-2">
           <div>
+            <p className="ms-16">
+              <svg
+                fill="#ffffff"
+                width="75px"
+                height="75px"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#ffffff"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M8,11V9a1,1,0,0,1,2,0v2a1,1,0,0,1-2,0Zm7,1a1,1,0,0,0,1-1V9a1,1,0,0,0-2,0v2A1,1,0,0,0,15,12Zm8,0A11,11,0,1,1,12,1,11.013,11.013,0,0,1,23,12Zm-2,0a9,9,0,1,0-9,9A9.01,9.01,0,0,0,21,12Zm-9,1.782A3.044,3.044,0,0,0,10,13c-2,0-2,1.333-4,1.333C6,14.333,8,17,10,17a3.044,3.044,0,0,0,2-.782A3.044,3.044,0,0,0,14,17c2,0,4-2.667,4-2.667-2,0-2-1.333-4-1.333A3.044,3.044,0,0,0,12,13.782Z"></path>
+                </g>
+              </svg>
+            </p>
             <h1 className="text-2xl tracking-wide font-bold">
               Ｔｏｙ ＢａＺａａｒ
             </h1>

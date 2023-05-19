@@ -1,7 +1,7 @@
-/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-irregular-whitespace */
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.js";
@@ -38,14 +38,40 @@ const Navbar = () => {
     <div className="">
       <div className="text-center my-2">
         <div>
-          <h1 className="text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-pink-500 p-4 tracking-wide font-bold">
-            Ｔｏｙ ＢａＺａａｒ
-          </h1>
-          <p className="text-sky-400  my-2 ">
-            ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
-            ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
-            ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
-          </p>
+          <div className="relative">
+            <h1 className="text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-pink-500 p-4 tracking-wide font-bold">
+              Ｔｏｙ ＢａＺａａｒ
+            </h1>
+            <span className="absolute -top-8 start-[20%] ">
+              <svg
+                fill="#3c42fb"
+                width="150px"
+                height="150px"
+                viewBox="-14.4 -14.4 52.80 52.80"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke="#3c42fb"
+                strokeWidth="0.00024000000000000003"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M8,11V9a1,1,0,0,1,2,0v2a1,1,0,0,1-2,0Zm7,1a1,1,0,0,0,1-1V9a1,1,0,0,0-2,0v2A1,1,0,0,0,15,12Zm8,0A11,11,0,1,1,12,1,11.013,11.013,0,0,1,23,12Zm-2,0a9,9,0,1,0-9,9A9.01,9.01,0,0,0,21,12Zm-9,1.782A3.044,3.044,0,0,0,10,13c-2,0-2,1.333-4,1.333C6,14.333,8,17,10,17a3.044,3.044,0,0,0,2-.782A3.044,3.044,0,0,0,14,17c2,0,4-2.667,4-2.667-2,0-2-1.333-4-1.333A3.044,3.044,0,0,0,12,13.782Z"></path>
+                </g>
+              </svg>
+            </span>
+          </div>
+
+          <Marquee speed={100} direction={"right"}>
+            <p className="text-sky-400  my-2 ">
+              ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
+              ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
+              ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
+            </p>
+          </Marquee>
         </div>
         <hr /> <hr />
       </div>
