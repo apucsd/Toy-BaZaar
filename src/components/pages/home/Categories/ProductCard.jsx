@@ -2,24 +2,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiHeart } from "react-icons/hi2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ProductCard = ({ toy }) => {
+  AOS.init({ duration: 1000 });
   const [bookMark, setBookMark] = useState(false);
   const {
     _id,
     toyName,
     imgURL,
-    sellerName,
-    sellerEmail,
+
     price,
-    quantity,
+
     rating,
-    category,
-    date,
   } = toy;
   return (
-    <div className="relative mx-auto w-full border bg-white  rounded-md overflow-hidden p-4">
-      <div className="relative">
+    <div className="relative mx-auto w-full bg-white  rounded-md overflow-hidden p-4">
+      <div data-aos="fade-left" className="relative">
         <img
           src={imgURL}
           alt="Product"
@@ -35,7 +35,9 @@ const ProductCard = ({ toy }) => {
         </span>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-medium text-gray-800">{toyName}</h3>
+        <div data-aos="fade-right">
+          <h3 className="text-lg font-medium text-gray-800">{toyName}</h3>
+        </div>
         <div className="flex justify-between my-2 items-center">
           <p className="text-red-600">${price}</p>
           <div className="flex items-center my-4">

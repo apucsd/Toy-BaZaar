@@ -44,7 +44,7 @@ const AllToys = () => {
               Toy Name
             </th>
             <th className="px-6 py-3 border-b-2 border-purple-500 bg-purple-200 text-left text-xs leading-4 font-medium text-purple-800 uppercase tracking-wider">
-              Sub-category
+              Category
             </th>
             <th className="px-6 py-3 border-b-2 border-blue-500 bg-blue-200 text-left text-xs leading-4 font-medium text-blue-800 uppercase tracking-wider">
               Available Quantity

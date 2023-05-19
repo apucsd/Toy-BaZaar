@@ -17,6 +17,7 @@ const AllToysTable = ({ toy }) => {
     rating,
     category,
   } = toy;
+  // console.log(toy);
   const handleToast = () => {
     if (!user) {
       toast.error("You have to log in first to view details");
@@ -31,7 +32,7 @@ const AllToysTable = ({ toy }) => {
         {toyName}
       </td>
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium text-gray-800">
-        N/A
+        {category.value}
       </td>
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium text-gray-800">
         {quantity}

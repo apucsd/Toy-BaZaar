@@ -34,7 +34,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div>
+    <div className="my-12">
       <h2 className="text-2xl font-bold lato my-2">Shop by category: </h2>
       <Tabs selectedIndex={activeTab} onSelect={handleTabSelect}>
         <TabList className="flex space-x-4 items-center justify-center tabs myBg tabs-boxed p-2 text-white">

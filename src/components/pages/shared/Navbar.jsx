@@ -42,7 +42,7 @@ const Navbar = () => {
             <h1 className="text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-pink-500 p-4 tracking-wide font-bold">
               Ｔｏｙ ＢａＺａａｒ
             </h1>
-            <span className="absolute -top-8 start-[20%] ">
+            <span className="md:absolute -top-8 start-[20%] hidden md:block">
               <svg
                 fill="#3c42fb"
                 width="150px"
