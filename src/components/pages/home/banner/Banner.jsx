@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -19,7 +20,7 @@ const Banner = () => {
           no bounds
         </p>
         <button className="myBtn absolute md:-bottom-32">
-          Explore the Fun!
+          <Link to="/login">Explore the Fun!</Link>
         </button>
       </div>
     </div>

@@ -10,7 +10,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/toys?email=${user?.email}`)
+    fetch(`https://toy-bazaar-server.vercel.app/toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -28,7 +28,7 @@ const MyToys = () => {
     const details = form.details.value;
     const updateToy = { price, details, quantity };
     // console.log(updateToy, form.id);
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://toy-bazaar-server.vercel.app/toys/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",
@@ -46,7 +46,7 @@ const MyToys = () => {
   };
   const handleDelete = (_id) => {
     console.log(_id);
-    fetch(`http://localhost:5000/toys/${_id}`, {
+    fetch(`https://toy-bazaar-server.vercel.app/toys/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

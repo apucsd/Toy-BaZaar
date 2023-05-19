@@ -16,7 +16,7 @@ const AllToys = () => {
     const text = event.target.value;
     // console.log(text);
     if (text) {
-      fetch(`http://localhost:5000/toys/search/${text}`)
+      fetch(`https://toy-bazaar-server.vercel.app/toys/search/${text}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
