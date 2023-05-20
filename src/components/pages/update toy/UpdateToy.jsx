@@ -11,7 +11,7 @@ const UpdateToy = () => {
     event.preventDefault();
 
     const form = event.target;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const quantity = form.quantity.value;
     const details = form.details.value;
     const updateToy = { price, details, quantity };

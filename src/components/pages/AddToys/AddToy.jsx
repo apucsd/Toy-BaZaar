@@ -26,10 +26,13 @@ export default function AddToy() {
   ];
 
   const [selectedOption, setSelectedOption] = useState(null);
-  // console.log(selectedOption);
+
   const onSubmit = (data) => {
-    // console.log(selectedOption);
     data.category = selectedOption;
+    data.price = parseInt(data.price);
+
+    // console.log(data);
+    // console.log(parseInt(data.price));
 
     fetch("https://toy-bazaar-server.vercel.app/toys", {
       method: "POST",

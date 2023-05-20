@@ -36,7 +36,7 @@ const MyToys = () => {
           showCancelButton: true,
           confirmButtonColor: "39B5E0",
           cancelButtonColor: "#A31ACB",
-          confirmButtonText: "Yes, Logout",
+          confirmButtonText: "Yes, Delete",
         }).then((result) => {
           if (result.isConfirmed) {
             if (data.deletedCount > 0) {
