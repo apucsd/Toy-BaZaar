@@ -5,7 +5,7 @@ const Gallery = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch("https://toy-bazaar-server.vercel.app/toys");
+      const response = await fetch("http://localhost:5000/toys");
       const data = await response.json();
       setToys(data.slice(0, 10));
     };

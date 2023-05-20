@@ -11,6 +11,7 @@ import AddToy from "../components/pages/AddToys/AddToy";
 import Blog from "../components/pages/blogs/Blog";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../components/pages/view-details/Details";
+import UpdateToy from "../components/pages/update toy/UpdateToy";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/all-toys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "/update-toy/:id",
+        element: <UpdateToy></UpdateToy>,
       },
       {
         path: "/my-toys",
@@ -49,7 +54,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://toy-bazaar-server.vercel.app/toys/${params.id}`),
+          fetch(`http://localhost:5000/toys/${params.id}`),
       },
       {
         path: "/blog",

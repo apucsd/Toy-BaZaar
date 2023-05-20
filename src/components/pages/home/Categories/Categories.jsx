@@ -28,7 +28,7 @@ const Categories = () => {
   };
 
   useEffect(() => {
-    fetch("https://toy-bazaar-server.vercel.app/toys")
+    fetch("http://localhost:5000/toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

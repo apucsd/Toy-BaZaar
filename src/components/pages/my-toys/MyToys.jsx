@@ -13,43 +13,17 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
-    fetch(`https://toy-bazaar-server.vercel.app/toys?email=${user?.email}`)
+    fetch(`http://localhost:5000/toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         setMyToys(data);
       });
-  }, [user]);
+  }, [user, recall]);
 
-  const handleUpdate = (event) => {
-    event.preventDefault();
-    // console.log(event.target);
-    const form = event.target;
-    const id = form.id;
-    const price = form.price.value;
-    const quantity = form.quantity.value;
-    const details = form.details.value;
-    const updateToy = { price, details, quantity };
-    // console.log(updateToy, form.id);
-    fetch(`https://toy-bazaar-server.vercel.app/toys/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(updateToy),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        if (data.modifiedCount > 0) {
-          toast.success("Your item has updated successfully");
-          setRecall(true);
-        }
-      });
-  };
   const handleDelete = (_id) => {
     // console.log(_id);
-    fetch(`https://toy-bazaar-server.vercel.app/toys/${_id}`, {
+    fetch(`http://localhost:5000/toys/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -78,7 +52,7 @@ const MyToys = () => {
     const value = e.target.value;
     // console.log(user);
     fetch(
-      `https://toy-bazaar-server.vercel.app/user/toys?email=${user?.email}&sortBy=${value}`
+      `http://localhost:5000/user/toys?email=${user?.email}&sortBy=${value}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -133,7 +107,6 @@ const MyToys = () => {
           <tbody>
             {myToys.map((myToy) => (
               <MyToysTable
-                handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
                 key={myToy._id}
                 myToy={myToy}

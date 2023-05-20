@@ -43,7 +43,6 @@ export default function AddToy() {
         // console.log(data);
         if (data.insertedId) {
           toast.success("A new toy has successfully added");
-          reset();
         }
       });
   };
