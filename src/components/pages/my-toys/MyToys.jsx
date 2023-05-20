@@ -5,6 +5,7 @@ import { toast } from "react-hot-toast";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/dist/sweetalert2.css";
 import useTitle from "../../../custom hooks/useTitle";
+import { set } from "react-hook-form";
 
 const MyToys = () => {
   useTitle("My Toys");
@@ -12,13 +13,13 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
-    fetch(`https://toy-bazaar-server.vercel.app/toys?email=${user?.email}`)
+    fetch(`http://localhost:5000/toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         setMyToys(data);
       });
-  }, [user, recall]);
+  }, [user]);
 
   const handleUpdate = (event) => {
     event.preventDefault();
@@ -73,10 +74,30 @@ const MyToys = () => {
         });
       });
   };
-
+  const handleChange = (e) => {
+    const value = e.target.value;
+    fetch(`http://localhost:5000/toys?sortBy=${value}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setMyToys(data);
+      });
+  };
+  // console.log(myToys);
   return (
     <div className="overflow-x-auto">
       <div>
+        <div className="flex my-4 justify-center">
+          <select
+            onChange={handleChange}
+            className=" p-3 w-full max-w-xs mx-auto shadow-md rounded-0"
+          >
+            <option>Filter By Price:</option>
+
+            <option value="ascending">Ascending </option>
+            <option value="descending">Descending </option>
+          </select>
+        </div>
         <table className="min-w-full bg-white rounded-lg">
           <thead>
             <tr>
