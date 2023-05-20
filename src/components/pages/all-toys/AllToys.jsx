@@ -9,7 +9,7 @@ const AllToys = () => {
   useTitle("All Toys");
   useEffect(() => {
     // using static limit 20
-    fetch("http://localhost:5000/toys?limit=20")
+    fetch("https://toy-bazaar-server.vercel.app/toys?limit=20")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
@@ -19,7 +19,7 @@ const AllToys = () => {
     const text = event.target.value;
     // console.log(text);
     if (text) {
-      fetch(`http://localhost:5000/toys/search/${text}`)
+      fetch(`https://toy-bazaar-server.vercel.app/toys/search/${text}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
