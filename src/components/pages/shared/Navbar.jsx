@@ -7,9 +7,6 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/dist/sweetalert2.css";
 import { toast } from "react-hot-toast";
-import { Tooltip } from "primereact/tooltip";
-import { Button } from "primereact/button";
-import logo from "../../../assets/White logo - no background.png";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);

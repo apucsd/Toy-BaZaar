@@ -4,10 +4,14 @@ const Gallery = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch("https://toy-bazaar-server.vercel.app/toys")
-      .then((res) => res.json())
-      .then((data) => setToys(data));
+    const loadData = async () => {
+      const response = await fetch("https://toy-bazaar-server.vercel.app/toys");
+      const data = await response.json();
+      setToys(data.slice(0, 10));
+    };
+    loadData();
   }, []);
+  // console.log(toys);
   return (
     <div className="my-12 bg-slate-100 md:p-12">
       <Marquee>
