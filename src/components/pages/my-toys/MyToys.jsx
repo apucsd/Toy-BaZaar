@@ -13,7 +13,7 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/toys?email=${user?.email}`)
+    fetch(`https://toy-bazaar-server.vercel.app/toys?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -76,7 +76,10 @@ const MyToys = () => {
   };
   const handleChange = (e) => {
     const value = e.target.value;
-    fetch(`http://localhost:5000/toys?sortBy=${value}`)
+    // console.log(user);
+    fetch(
+      `https://toy-bazaar-server.vercel.app/user/toys?email=${user?.email}&sortBy=${value}`
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -92,7 +95,7 @@ const MyToys = () => {
             onChange={handleChange}
             className=" p-3 w-full max-w-xs mx-auto shadow-md rounded-0"
           >
-            <option>Filter By Price:</option>
+            <option value="ascending">Filter By Price:</option>
 
             <option value="ascending">Ascending </option>
             <option value="descending">Descending </option>
