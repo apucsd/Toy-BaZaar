@@ -9,7 +9,7 @@ const Gallery = () => {
       .then((data) => setToys(data));
   }, []);
   return (
-    <div className="my-12 bg-slate-100 p-12">
+    <div className="my-12 bg-slate-100 md:p-12">
       <Marquee>
         {toys.map((toy) => (
           <div key={toy._id}>

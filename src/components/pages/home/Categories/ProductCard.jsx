@@ -29,7 +29,7 @@ const ProductCard = ({ toy }) => {
           onClick={() => setBookMark(!bookMark)}
           className={`${
             bookMark ? "text-red-600" : "text-slate-400"
-          } absolute top-3 text-2xl right-1 cursor-pointer`}
+          } absolute top-3 text-2xl right-4 cursor-pointer`}
         >
           <HiHeart></HiHeart>
         </span>

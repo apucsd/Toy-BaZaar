@@ -62,7 +62,7 @@ const Details = () => {
         </div>
         <div>
           <img
-            className="w-full border-2 rounded-sm border-blue-400 h-96"
+            className="w-full border-2 rounded-sm border-blue-400"
             src={toy?.imgURL}
             alt=""
           />

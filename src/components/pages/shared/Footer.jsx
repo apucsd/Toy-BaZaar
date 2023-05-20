@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 myBg text-white  grid md:grid-cols-3 grid-cols-1 justify-center text-center">
+    <footer className="footer p-10 myBg text-white  flex flex-wrap justify-around text-center">
       <div>
         <div className="text-center my-2">
           <div>
@@ -43,6 +43,7 @@ const Footer = () => {
         <span className="footer-title">Company</span>
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
+        <a className="link link-hover">Blogs</a>
       </div>
       <div>
         <span className="footer-title">Legal</span>
@@ -152,7 +153,7 @@ const Footer = () => {
                 target="_blank"
                 className="text-white transition hover:opacity-75"
               >
-                <span className="sr-only">Dribbble</span>
+                <span className="sr-only">Dribbles</span>
 
                 <svg
                   className="w-6 h-6"

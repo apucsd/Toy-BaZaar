@@ -65,11 +65,17 @@ const Navbar = () => {
             </span>
           </div>
 
-          <Marquee speed={100} direction={"right"}>
+          <Marquee speed={50} direction={"left"}>
             <p className="text-sky-400  my-2 ">
-              ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
-              ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
-              ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
+              <span className="md:block hidden">
+                {" "}
+                ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
+                ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
+                ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
+              </span>
+              <span className="md:hidden block">
+                <small> Toys Galore: Unleash Your Imagination</small>
+              </span>
             </p>
           </Marquee>
         </div>

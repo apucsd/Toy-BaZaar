@@ -49,7 +49,8 @@ export default function AddToy() {
   };
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-    <div className="my-8 bg-blue-50 p-12">
+    <div className="my-8 bg-blue-50 md:p-12 p-2">
+      <h2 className="text-center font-semibold text-3xl mb-6">Add Your Toy</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
         {/* register your input into the hook by invoking the "register" function */}
         <div className="flex gap-1">
@@ -83,6 +84,7 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <input
+            type="number"
             required
             placeholder="Price"
             {...register("price")}
@@ -97,12 +99,14 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <input
+            type="number"
             required
-            placeholder="Ratings"
+            placeholder="Ratings  [1 to 5]"
             {...register("rating")}
             className="input input-bordered input-info w-full"
           />
           <input
+            type="number"
             required
             placeholder="Available quantity"
             {...register("quantity")}
@@ -119,8 +123,8 @@ export default function AddToy() {
         </div>
         <div className="flex gap-1">
           <textarea
-            placeholder="Details "
-            className="input input-bordered input-info w-full "
+            placeholder="Details Descriptions"
+            className="input input-bordered text-center input-info w-full pt-3"
             {...register("details")}
           />
         </div>

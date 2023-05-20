@@ -75,7 +75,7 @@ const MyToys = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-x-auto">
       <div>
         <table className="min-w-full bg-white rounded-lg">
           <thead>
