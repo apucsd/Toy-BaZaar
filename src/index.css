@@ -9,7 +9,7 @@
   font-family: "Poppins", sans-serif;
 }
 .myBtn {
-  @apply bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg;
+  @apply text-indigo-700 border border-indigo-600 py-2 hover:bg-blue-400 hover:text-white px-6 rounded inline-flex items-center;
 }
 .useBg {
   background-image: url("https://img.freepik.com/free-psd/maternity-baby-shower-background_23-2150237221.jpg?w=900&t=st=1684388201~exp=1684388801~hmac=57c89ca337f74515be0fb1127e8ab3977c255696a2af1c7cf1d71959041f4128");

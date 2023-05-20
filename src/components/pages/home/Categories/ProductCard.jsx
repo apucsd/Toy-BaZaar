@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiHeart } from "react-icons/hi2";
+import { HiArrowRight, HiHeart } from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -58,8 +58,9 @@ const ProductCard = ({ toy }) => {
           </div>
         </div>
         <div className="absolute bottom-1 left-12">
-          <button className="myBtn w-full  ">
+          <button className="myBtn w-full  flex gap-2 items-center ">
             <Link to={`/toys/${_id}`}>View Details</Link>
+            <HiArrowRight></HiArrowRight>
           </button>
         </div>
       </div>

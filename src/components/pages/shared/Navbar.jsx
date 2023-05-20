@@ -1,7 +1,8 @@
 /* eslint-disable no-irregular-whitespace */
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Marquee from "react-fast-marquee";
+
+import topBanner from "../../../assets/bear.png";
 
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2/dist/sweetalert2.js";
@@ -33,54 +34,9 @@ const Navbar = () => {
   };
   return (
     <div className="">
-      <div className="text-center my-2">
-        <div>
-          <div className="relative">
-            <h1 className="text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-600 to-pink-500 p-4 tracking-wide font-bold">
-              Ｔｏｙ ＢａＺａａｒ
-            </h1>
-            <span className="md:absolute -top-8 start-[20%] hidden md:block">
-              <svg
-                fill="#3c42fb"
-                width="150px"
-                height="150px"
-                viewBox="-14.4 -14.4 52.80 52.80"
-                xmlns="http://www.w3.org/2000/svg"
-                stroke="#3c42fb"
-                strokeWidth="0.00024000000000000003"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M8,11V9a1,1,0,0,1,2,0v2a1,1,0,0,1-2,0Zm7,1a1,1,0,0,0,1-1V9a1,1,0,0,0-2,0v2A1,1,0,0,0,15,12Zm8,0A11,11,0,1,1,12,1,11.013,11.013,0,0,1,23,12Zm-2,0a9,9,0,1,0-9,9A9.01,9.01,0,0,0,21,12Zm-9,1.782A3.044,3.044,0,0,0,10,13c-2,0-2,1.333-4,1.333C6,14.333,8,17,10,17a3.044,3.044,0,0,0,2-.782A3.044,3.044,0,0,0,14,17c2,0,4-2.667,4-2.667-2,0-2-1.333-4-1.333A3.044,3.044,0,0,0,12,13.782Z"></path>
-                </g>
-              </svg>
-            </span>
-          </div>
-
-          <Marquee speed={50} direction={"left"}>
-            <p className="text-sky-400  my-2 ">
-              <span className="md:block hidden">
-                {" "}
-                ​🇹​​🇴​​🇾​​🇸​ ​🇬​​🇦​​🇱​​🇴​​🇷​​🇪 ​⦂
-                ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
-                ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
-              </span>
-              <span className="md:hidden block">
-                <small> Toys Galore: Unleash Your Imagination</small>
-              </span>
-            </p>
-          </Marquee>
-        </div>
-        <hr /> <hr />
-      </div>
       <div className="navbar myBg text-white p-3 lato my-3">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown md:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +80,12 @@ const Navbar = () => {
                 <Link to="/blog">Login</Link>
               </li>
             </ul>
+          </div>
+          <div>
+            <img className="md:w-8 w-4 bg-transparent" src={topBanner} alt="" />
+            <h1 className="md:text-lg text-xs">
+              <Link to="/">Toy BaZaar</Link>
+            </h1>
           </div>
         </div>
         <div className="navbar-center md:block hidden">
@@ -225,12 +187,15 @@ const Navbar = () => {
                 </div>
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 absolute right-0 ring-1 ring-white bottom-0"></span>
               </div>
-              <span onClick={handleLogOut} className="myBtn ">
+              <span
+                onClick={handleLogOut}
+                className="bg-green-400 text-white font-medium rounded-md px-4 py-2 hover:bg-green-500 transition duration-300 ease-in-out shadow-lg "
+              >
                 <Link to="/login">Logout</Link>
               </span>
             </div>
           ) : (
-            <span className="myBtn ">
+            <span className="bg-yellow-400 text-white font-medium rounded-md px-4 py-2 hover:bg-yellow-500 transition duration-300 ease-in-out shadow-lg">
               <Link to="/login">Login</Link>
             </span>
           )}

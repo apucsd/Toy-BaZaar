@@ -1,10 +1,8 @@
 import React from "react";
 
 import logo from "../../../../assets/126767175_padded_logo.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 const About = () => {
-  AOS.init({ duration: 1000 });
   return (
     <div className=" my-12 py-10">
       <hr className="my-4" />
@@ -12,7 +10,10 @@ const About = () => {
         data-aos="fade-up"
         className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <h1 className="text-4xl font-bold mb-8">About Us</h1>
+        <h1 className="text-4xl font-bold mb-8 border-s-4 p-2 border-blue-400">
+          {" "}
+          About Us
+        </h1>
 
         <div className="flex flex-col sm:flex-row gap-8">
           <div className="w-full sm:w-1/2 mb-6 sm:mb-0">

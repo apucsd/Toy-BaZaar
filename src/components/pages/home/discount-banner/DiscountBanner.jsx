@@ -1,5 +1,4 @@
 import React from "react";
-import banner from "../../../../assets/dis-banner.png";
 const DiscountBanner = () => {
   return (
     <div data-aos="fade-right" className="">

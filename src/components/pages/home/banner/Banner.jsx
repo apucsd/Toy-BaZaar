@@ -10,12 +10,9 @@ const Banner = () => {
         data-aos="fade-up"
         className="md:w-[50%] mx-auto space-y-6  absolute top-[20%] left-12 "
       >
-        <h1 className="md:text-5xl text-2xl">
+        <h1 className="md:text-4xl text-2xl">
           Toy Extravaganza: Explore the Ultimate <br />
-          <br />
-          <span className="text--600 md:text-6xl text-3xl  font-bold">
-            Toy BaZaar!
-          </span>
+          <span className="text-5xl  font-bold">Toy BaZaar!</span>
         </h1>
         <p>
           <small className="">
@@ -24,7 +21,7 @@ const Banner = () => {
             no bounds.
           </small>
         </p>
-        <button className="myBtn absolute md:-bottom-20">
+        <button className="btn btn-warning absolute md:-bottom-20">
           <Link to="/login">Explore the Fun!</Link>
         </button>
       </div>

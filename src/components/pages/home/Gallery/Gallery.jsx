@@ -13,11 +13,15 @@ const Gallery = () => {
   }, []);
   // console.log(toys);
   return (
-    <div className="my-12 bg-slate-100 md:p-12">
+    <div className="my-12 bg-slate-100 md:p-6">
       <Marquee>
         {toys.map((toy) => (
           <div key={toy._id}>
-            <img className="w-96 h-96" src={toy.imgURL} alt="" />
+            <img
+              className="md:w-96 md:h-96 h-72 w-full"
+              src={toy.imgURL}
+              alt=""
+            />
           </div>
         ))}
       </Marquee>
