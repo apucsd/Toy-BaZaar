@@ -5,10 +5,10 @@ import AOS from "aos";
 
 const Banner = () => {
   return (
-    <div className="relative md:h-screen  useBg text-white">
+    <div className="relative md:h-screen h-96  useBg text-white">
       <div
         data-aos="fade-up"
-        className="md:w-[50%] mx-auto space-y-6  absolute top-[20%] left-12 "
+        className="md:w-[50%] mx-auto space-y-6  absolute top-[20%] left-10"
       >
         <h1 className="md:text-4xl text-2xl">
           Toy Extravaganza: Explore the Ultimate <br />

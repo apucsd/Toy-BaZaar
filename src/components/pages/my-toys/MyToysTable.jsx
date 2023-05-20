@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
+import { HiCloudArrowUp, HiTrash } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
 const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
@@ -40,14 +41,14 @@ const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium hover:bg-slate-50 ">
         <label
           htmlFor="my-modal-3"
-          className="inline-block rounded-full py-1 px-3 text-xs font-semibold text-white bg-green-500 cursor-pointer"
+          className="inline-block rounded-full py-1 px-3 text-md font-semibold text-white bg-green-500 cursor-pointer"
         >
-          Update
+          <HiCloudArrowUp></HiCloudArrowUp>
         </label>
         {/* Put this part before </body> tag */}
         <input type="checkbox" id="my-modal-3" className="modal-toggle" />
         <div className="modal  modal-lg">
-          <div className="modal-box  w-11/12 max-w-5xl relative">
+          <div className="modal-box  relative">
             <label
               htmlFor="my-modal-3"
               className="btn btn-sm  absolute right-2 top-2"
@@ -110,7 +111,7 @@ const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+                  className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:bg-indigo-600"
                 >
                   Update
                 </button>
@@ -122,9 +123,9 @@ const MyToysTable = ({ myToy, handleUpdate, handleDelete }) => {
       <td className="px-6 py-4 border-b border-gray-200 text-sm leading-5 font-medium hover:bg-slate-50 ">
         <span
           onClick={() => handleDelete(_id)}
-          className="inline-block rounded-full py-1 px-3 text-xs font-semibold text-white bg-red-500 cursor-pointer"
+          className="inline-block rounded-full py-1 px-3 text-md font-semibold text-white bg-red-500 cursor-pointer"
         >
-          Delete
+          <HiTrash></HiTrash>
         </span>
       </td>
     </tr>

@@ -16,7 +16,6 @@
   background-size: cover;
   background-color: rgba(112, 140, 205, 0.892);
   background-blend-mode: multiply;
-  height: 100vh;
 }
 .myBg {
   @apply bg-gradient-to-r from-blue-700 to-blue-400;

@@ -77,7 +77,7 @@ const Navbar = () => {
                 <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <Link to="/blog">Login</Link>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
@@ -191,7 +191,7 @@ const Navbar = () => {
                 onClick={handleLogOut}
                 className="bg-green-400 text-white font-medium rounded-md px-4 py-2 hover:bg-green-500 transition duration-300 ease-in-out shadow-lg "
               >
-                <Link to="/login">Logout</Link>
+                <Link>Logout</Link>
               </span>
             </div>
           ) : (

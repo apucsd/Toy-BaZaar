@@ -11,7 +11,7 @@ const Details = () => {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 gap-4 justify-center items-center bg-blue-50 text-blue-800 rounded-lg p-6 shadow-md">
+      <div className="grid md:grid-cols-2 gap-4 justify-center items-center bg-blue-50 rounded-lg p-6 shadow-md">
         <div className="space-y-4 md:p-8">
           <h2 className="text-3xl font-bold mb-4">{toy?.toyName}</h2>
 
@@ -30,10 +30,10 @@ const Details = () => {
             <h3 className="text-xl font-bold">Seller Info:</h3>
             <hr />
             <hr />
-            <p className="text-lg text-black flex justify-between">
+            <p className=" text-slate-600 flex justify-between">
               <span> Name:</span> <span>{toy.sellerName}</span>
             </p>
-            <p className="text-lg text-black flex justify-between">
+            <p className=" text-slate-600 flex justify-between">
               <span> Email:</span> <span>{toy.sellerEmail}</span>
             </p>
           </div>
@@ -62,7 +62,7 @@ const Details = () => {
         </div>
         <div>
           <img
-            className="w-full border-2 rounded-sm border-blue-400"
+            className="md:w-1/2 mx-auto border-2 rounded-sm border-blue-400"
             src={toy?.imgURL}
             alt=""
           />

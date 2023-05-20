@@ -130,7 +130,12 @@ export default function AddToy() {
         </div>
 
         <div className="text-center">
-          <input required className="myBtn cursor-pointer" type="submit" />
+          <input
+            required
+            value="Add Toy"
+            className="btn bg-green-400 border-0 hover:bg-green-500"
+            type="submit"
+          />
         </div>
       </form>
     </div>

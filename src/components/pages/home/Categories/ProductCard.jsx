@@ -57,8 +57,8 @@ const ProductCard = ({ toy }) => {
             <span className="text-gray-600">{rating}</span>
           </div>
         </div>
-        <div className="absolute bottom-1 left-12">
-          <button className="myBtn w-full  flex gap-2 items-center ">
+        <div className="absolute bottom-0">
+          <button className="myBtn hover:border-0 w-full  flex gap-2 items-center ">
             <Link to={`/toys/${_id}`}>View Details</Link>
             <HiArrowRight></HiArrowRight>
           </button>
