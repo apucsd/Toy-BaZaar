@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos";
+import { FaFacebook } from "react-icons/fa";
 // import "aos/dist/aos.css";
 
 const Banner = () => {
@@ -10,9 +10,9 @@ const Banner = () => {
         data-aos="fade-up"
         className="md:w-[50%] mx-auto space-y-6  absolute top-[20%] left-10"
       >
-        <h1 className="md:text-4xl text-2xl">
+        <h1 className="md:text-4xl ">
           Toy Extravaganza: Explore the Ultimate <br />
-          <span className="text-5xl  font-bold">Toy BaZaar!</span>
+          <span className="  font-bold">Toy BaZaar!</span>
         </h1>
         <p>
           <small className="">
