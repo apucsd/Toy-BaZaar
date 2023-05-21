@@ -23,7 +23,7 @@ const ProductCard = ({ toy }) => {
         <img
           src={imgURL}
           alt="Product"
-          className="md:w-[230px] w-[300px] h-[200px] object-cover"
+          className="md:w-[230px] w-[300px] h-[180px] object-cover"
         />
         <span
           onClick={() => setBookMark(!bookMark)}
