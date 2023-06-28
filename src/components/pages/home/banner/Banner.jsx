@@ -1,29 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook } from "react-icons/fa";
-// import "aos/dist/aos.css";
 
 const Banner = () => {
   return (
-    <div className="relative md:h-screen h-96  useBg text-white">
-      <div
-        data-aos="fade-up"
-        className="md:w-[50%] mx-auto space-y-6  absolute top-[20%] left-10"
-      >
-        <h1 className="md:text-4xl ">
-          Toy Extravaganza: Explore the Ultimate <br />
-          <span className="  font-bold">Toy BaZaar!</span>
-        </h1>
-        <p>
-          <small className="">
-            Unleash the magic of play at Toy Extravaganza! Explore our
-            extraordinary toy bazaar, where wonders abound and imagination knows
-            no bounds.
-          </small>
-        </p>
-        <button className="btn btn-warning absolute md:-bottom-20">
-          <Link to="/login">Explore the Fun!</Link>
-        </button>
+    <div className="hero min-h-screen bg-base-200">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <img
+          style={{
+            clipPath:
+              "polygon(11% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 16% 17%)",
+          }}
+          src="https://img.freepik.com/free-vector/christmas-toys-background-flat-design_23-2148350472.jpg?w=996&t=st=1687957956~exp=1687958556~hmac=d3b4948960388da32f1fcccd07bca3ef22c0f1be2eefda9495c937408667405c"
+          className="max-w-xl rounded-lg shadow-2xl"
+        />
+        <div>
+          <h1 className="text-5xl font-bold">REIMAGINING PLAY FOR A NEW DAY</h1>
+          <p className="py-6">
+            Whatever your place in the ecosystem of play — inventor, designer,
+            manufacturer, buyer, distributors, entertainment exec, or beyond —
+            Toy BaZaar is for you!
+          </p>
+          <Link to="register">
+            <button className="btn border-0 bg-red-600">Get Started</button>
+          </Link>
+        </div>
       </div>
     </div>
   );
