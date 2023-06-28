@@ -14,7 +14,7 @@ const Banner = () => {
           className="max-w-xl rounded-lg shadow-2xl"
         />
         <div>
-          <h1 className="text-5xl font-bold">REIMAGINING PLAY FOR A NEW DAY</h1>
+          <h1 className="text-5xl font-bold">REMAINING PLAY FOR A NEW DAY</h1>
           <p className="py-6">
             Whatever your place in the ecosystem of play — inventor, designer,
             manufacturer, buyer, distributors, entertainment exec, or beyond —
