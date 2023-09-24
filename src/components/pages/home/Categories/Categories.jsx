@@ -35,15 +35,29 @@ const Categories = () => {
 
   return (
     <div className="my-12">
-      <h2 className="text-2xl font-bold lato my-4 border-s-4 p-2 border-blue-400">
-        Shop by category:{" "}
-      </h2>
+      <div className="text-center">
+        <h2 className="text-5xl font-bold  uppercase lato my-4 border-s-4 p-2 border-blue-400">
+          Popular In Store Shop
+        </h2>
+        <p className="lato my-3">Toys & Games Store goodies for your kids.</p>
+      </div>
       <Tabs selectedIndex={activeTab} onSelect={handleTabSelect}>
-        <TabList className="flex space-x-4 items-center justify-center tabs myBg tabs-boxed p-2 text-white">
-          <Tab selectedClassName="">All Categories</Tab>
-          <Tab selectedClassName="  ">Bears</Tab>
-          <Tab selectedClassName=" ">Horses</Tab>
-          <Tab selectedClassName=" ">Elephants</Tab>
+        <TabList className="flex uppercase space-x-4 items-center justify-center tabs tabs-boxed p-2 bg-transparent">
+          <Tab selectedClassName="text-white w-full text-center bg-[#2BB24C] border border-gray-400 text-sm  px-4 cursor-pointer">
+            All Categories
+          </Tab>
+          <Tab
+            selectedClassName="!border-[#2BB24C] text-white w-full text-center bg-[#2BB24C] border border-gray-400 text-sm cursor-pointer"
+            className="!py-1.5 !px-4 !border-[#2BB24C] cursor-pointer"
+          >
+            Bears
+          </Tab>
+          <Tab selectedClassName="text-white w-full text-center bg-[#2BB24C] border border-gray-400 text-sm py-3 px-4 cursor-pointer ">
+            Horses
+          </Tab>
+          <Tab selectedClassName="text-white w-full text-center bg-[#2BB24C] border border-gray-400 text-sm py-3 px-4 cursor-pointer ">
+            Elephants
+          </Tab>
         </TabList>
         <hr />
 

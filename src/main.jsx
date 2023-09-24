@@ -8,7 +8,7 @@ import AuthProvider from "./Providers/AuthProvider";
 import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="md:mx-12 mx-4">
+  <>
     <Toaster />
 
     <React.StrictMode>
@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <RouterProvider router={router}></RouterProvider>
       </AuthProvider>
     </React.StrictMode>
-  </div>
+  </>
 );

@@ -2,8 +2,11 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className=" lg:px-32 lg:pt-24">
-      <h1 className="text-center font-bold text-3xl mb-6">Our Gallery</h1>
+    <div className=" lg:px-32 pt-24 bg-[#12AEE0]">
+      <h1 className="text-center font-bold text-5xl mb-10 uppercase text-white">
+        Our Gallery
+      </h1>
+      <hr className="my-10" />
       <div className=" flex flex-wrap md:-m-2">
         <div className="flex w-1/2 flex-wrap">
           <div

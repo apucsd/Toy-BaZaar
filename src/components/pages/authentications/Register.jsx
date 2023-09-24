@@ -9,6 +9,7 @@ import { updateProfile } from "firebase/auth";
 import { toast } from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 import useTitle from "../../../custom hooks/useTitle";
+import Wave from "react-wavify";
 const Register = () => {
   useTitle("Register");
   const { createUser } = useContext(AuthContext);
@@ -43,10 +44,31 @@ const Register = () => {
   };
   return (
     <div>
-      <section className="bg-white">
+      <Wave
+        fill="#2BB24C"
+        paused={false}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+        options={{
+          height: 100,
+          amplitude: 20,
+          speed: 0.15,
+          points: 5,
+        }}
+      />
+      <section className="">
         <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form onSubmit={handleRegister} className="w-full max-w-md">
-            <div className="flex justify-center mx-auto text-5xl text-[#0060f0e6]">
+          <form
+            onSubmit={handleRegister}
+            className="w-full max-w-md p-4 border"
+          >
+            <div className="flex justify-center mx-auto text-5xl text-[#FFFFFF]">
               <FaUser></FaUser>
             </div>
 
@@ -185,10 +207,7 @@ const Register = () => {
             </div>
 
             <div className="mt-6">
-              <button
-                type="submit"
-                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-              >
+              <button type="submit" className="w-full myBtn">
                 Sign Up
               </button>
 

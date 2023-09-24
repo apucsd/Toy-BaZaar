@@ -4,18 +4,15 @@ import logo from "../../../assets/bear.png";
 
 const Footer = () => {
   return (
-    <footer className="footer p-10 myBg text-white  flex flex-wrap justify-around text-center">
+    <footer className="footer p-10 bg-[#12AEE0] text-white flex flex-wrap justify-around text-center">
       <div>
         <div className="text-center my-2">
           <div className="">
             <img className="mx-auto my-4" src={logo} alt="" />
-            <h1 className="text-2xl tracking-wide font-bold">
-              Ｔｏｙ ＢａＺａａｒ
+            <h1 className="text-2xl tracking-wide font-extrabold uppercase ">
+              Toy Bazaar
             </h1>
-            <p className="text-sky-400 my-2 ">
-              ​🇺​​🇳​​🇱​​🇪​​🇦​​🇸​​🇭​ ​🇾​​🇴​​🇺​​🇷​
-              ​🇮​​🇲​​🇦​​🇬​​🇮​​🇳​​🇦​​🇹​​🇮​​🇴​​🇳
-            </p>
+            <p className=" my-2 ">Unleash Your Imagination</p>
           </div>
         </div>
       </div>
@@ -33,14 +30,14 @@ const Footer = () => {
         <a className="link link-hover">Cookie policy</a>
       </div>
       <div>
-        <div className="pt-8 mt-16 border-t text-white border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
+        <div className="pt-8 mt-16 border-t  border-gray-100 sm:flex sm:items-center sm:justify-between lg:mt-24">
           <ul className="md:flex flex gap-2 mt-8  md:justify-center justify-start">
             <li>
               <a
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-white transition hover:opacity-75"
+                className=" transition hover:opacity-75"
               >
                 <span className="sr-only">Facebook</span>
 
@@ -64,7 +61,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-white transition hover:opacity-75"
+                className=" transition hover:opacity-75"
               >
                 <span className="sr-only">Instagram</span>
 
@@ -88,7 +85,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-white transition hover:opacity-75"
+                className=" transition hover:opacity-75"
               >
                 <span className="sr-only">Twitter</span>
 
@@ -108,7 +105,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-white transition hover:opacity-75"
+                className=" transition hover:opacity-75"
               >
                 <span className="sr-only">GitHub</span>
 
@@ -132,7 +129,7 @@ const Footer = () => {
                 href="/"
                 rel="noreferrer"
                 target="_blank"
-                className="text-white transition hover:opacity-75"
+                className=" transition hover:opacity-75"
               >
                 <span className="sr-only">Dribbles</span>
 
@@ -152,7 +149,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <p className="text-sm text-white">
+        <p className="text-sm ">
           &copy; {new Date().getFullYear()} Toy BaZaar. All rights reserved.
         </p>
       </div>

@@ -33,8 +33,8 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="">
-      <div className="navbar myBg text-white p-3 lato my-3">
+    <div className="uppercase">
+      <div className="navbar lato">
         <div className="navbar-start">
           <div className="dropdown md:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -55,9 +55,9 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-gradient-to-r from-blue-500 to-blue-400 rounded-box w-52 "
+              className="menu menu-compact dropdown-content mt-3 w-60 h-screen p-2 border-r bg-white absolute rounded left-0 right-0 shadow  md:mt-8"
             >
-              <li>
+              <li className="pt-10 ">
                 <Link to="/">Home</Link>
               </li>
               <li>
@@ -82,13 +82,18 @@ const Navbar = () => {
             </ul>
           </div>
           <div>
-            <img className="md:w-8 w-4 bg-transparent" src={topBanner} alt="" />
-            <h1 className="md:text-lg text-xs">
-              <Link to="/">Toy BaZaar</Link>
+            <h1 className="">
+              <Link to="/">
+                <img
+                  className="md:w-32 md:h-20 h-8 w-12 myPolygon m-auto"
+                  src={"/toy-bazar.png"}
+                  alt=""
+                />
+              </Link>
             </h1>
           </div>
         </div>
-        <div className="navbar-center md:block hidden">
+        <div className="navbar-center  md:block hidden">
           <ul className="flex gap-6">
             <li>
               <NavLink
@@ -97,8 +102,8 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "border-b-2 border-blue-400"
-                    : ""
+                    ? "myBtn"
+                    : "myBtnHover px-4 py-2"
                 }
               >
                 Home
@@ -111,8 +116,8 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "border-b-2 border-blue-400"
-                    : ""
+                    ? "myBtn"
+                    : "myBtnHover px-4 py-2"
                 }
               >
                 All Toys
@@ -127,8 +132,8 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "border-b-2 border-blue-400"
-                        : ""
+                        ? "myBtn"
+                        : "myBtnHover px-4 py-2"
                     }
                   >
                     My Toys
@@ -141,8 +146,8 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "border-b-2 border-blue-400"
-                        : ""
+                        ? "myBtn"
+                        : "myBtnHover px-4 py-2"
                     }
                   >
                     Add Toys
@@ -157,8 +162,8 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "border-b-2 border-blue-400"
-                    : ""
+                    ? "myBtn"
+                    : "myBtnHover px-4 py-2"
                 }
               >
                 Blog
@@ -189,13 +194,13 @@ const Navbar = () => {
               </div>
               <span
                 onClick={handleLogOut}
-                className="bg-green-400 text-white font-medium rounded-md px-4 py-2 hover:bg-green-500 transition duration-300 ease-in-out shadow-lg "
+                className="bg-green-400 text-white md:font-medium rounded-md md:px-4 md:py-2 hover:bg-green-500 transition duration-300 ease-in-out shadow-lg "
               >
                 <Link>Logout</Link>
               </span>
             </div>
           ) : (
-            <span className="bg-yellow-400 text-white font-medium rounded-md px-4 py-2 hover:bg-yellow-500 transition duration-300 ease-in-out shadow-lg">
+            <span className="myBtn">
               <Link to="/login">Login</Link>
             </span>
           )}

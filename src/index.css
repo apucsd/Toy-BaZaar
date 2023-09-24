@@ -9,7 +9,10 @@
   font-family: "Poppins", sans-serif;
 }
 .myBtn {
-  @apply text-indigo-700 border border-indigo-600 py-2 hover:bg-blue-400 hover:text-white px-6 rounded inline-flex items-center;
+  @apply bg-[#F5B120] cursor-pointer text-white font-medium rounded px-4 py-2 hover:shadow-xl transition duration-300 ease-in-out shadow-lg;
+}
+.myBtnHover:hover {
+  @apply bg-[#F5B120] text-white font-medium rounded px-4 py-2 hover:shadow-xl transition duration-500 ease-in-out shadow-lg;
 }
 .useBg {
   background-image: url("https://img.freepik.com/free-psd/maternity-baby-shower-background_23-2150237221.jpg?w=900&t=st=1684388201~exp=1684388801~hmac=57c89ca337f74515be0fb1127e8ab3977c255696a2af1c7cf1d71959041f4128");
@@ -17,6 +20,7 @@
   background-color: rgba(112, 140, 205, 0.892);
   background-blend-mode: multiply;
 }
-.myBg {
-  @apply bg-gradient-to-r from-blue-700 to-blue-400;
+
+.myPolygon {
+  clip-path: polygon(0 12%, 100% 12%, 100% 50%, 100% 81%, 0 81%, 0% 50%);
 }

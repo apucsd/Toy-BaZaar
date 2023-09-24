@@ -11,23 +11,37 @@ const Details = () => {
 
   return (
     <div>
-      <div className="grid md:grid-cols-2 gap-4 justify-center items-center bg-blue-50 rounded-lg p-6 shadow-md">
+      <div className="w-full h-52 bg-[#2BB24C] text-white text-center font  flex justify-center items-center">
+        <div>
+          <h1 className="text-5xl font-bold bg-[#41BA5E] p-2 px-20 uppercase">
+            Toy Bazaar
+          </h1>
+          <p className=" uppercase font-bold bg-[#41BA5E] p-2 px-20 my-4">
+            Make play time a blast with our finest toys and games!
+          </p>
+        </div>
+      </div>
+      <div className="grid md:grid-cols-2 gap-4 justify-center items-center  rounded-lg p-6 shadow-md">
         <div className="space-y-4 md:p-8">
-          <h2 className="text-3xl font-bold mb-4">{toy?.toyName}</h2>
+          <h2 className="text-4xl font-extrabold mb-4 uppercase ">
+            {toy?.toyName}
+          </h2>
 
           <hr />
-          <p className="text-lg font-bold text-red-600 mb-2">
-            Price: ${toy?.price}
+          <p className="text-lg font-bold bg-[#12AEE0] p-2 text-white mb-2">
+            ${toy?.price}
           </p>
-          <p className="text-lg">Ratings: {toy.rating}</p>
-          <h3 className="text-xl font-bold underline">Detail description:</h3>
+
+          <h3 className="text-xl font-bold underline uppercase">
+            Detail description:
+          </h3>
 
           <p className="text-sm mb-2">{toy?.details}</p>
-          <p className="text-lg font-bold text-green-500 flex justify-between">
+          <p className="text-lg font-bold text-green-500 flex justify-between uppercase">
             <span> Available Quantity:</span> <span>{toy.quantity}</span>
           </p>
           <div>
-            <h3 className="text-xl font-bold">Seller Info:</h3>
+            <h3 className="text-xl font-bold uppercase">Seller Info:</h3>
             <hr />
             <hr />
             <p className=" text-slate-600 flex justify-between">
@@ -39,9 +53,10 @@ const Details = () => {
           </div>
 
           <div className="flex flex-wrap justify-around">
-            <button className="bg-fuchsia-500 hover:bg-purple-600 text-white py-3 px-6 rounded-full shadow-lg">
-              <span className="flex items-center justify-center">
+            <button className="myBtn text-white py-3 px-6 rounded-full shadow-lg">
+              <span className="flex items-center justify-center gap-3">
                 <svg
+                  className="w-6 h-6"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
@@ -49,11 +64,10 @@ const Details = () => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-6 h-6 mr-2"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <circle cx="12" cy="12" r="6" />
-                  <path d="M12 8v8M8 12h8" />
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l3.38 13.52a2.997 2.997 0 0 0 2.85 2.01h7.56a3 3 0 0 0 2.85-2.01L23 3H6" />
                 </svg>
                 Buy Now
               </span>

@@ -5,6 +5,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 import useTitle from "../../../custom hooks/useTitle";
+import Wave from "react-wavify";
 
 const Login = () => {
   useTitle("Login");
@@ -32,10 +33,28 @@ const Login = () => {
   };
   return (
     <div>
-      <section className="bg-white">
+      <Wave
+        fill="#12AEE0"
+        paused={false}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+        options={{
+          height: 100,
+          amplitude: 20,
+          speed: 0.15,
+          points: 5,
+        }}
+      />
+      <section className="text-white">
         <div className="container flex items-center justify-center h-[80vh] px-6 mx-auto">
-          <form onSubmit={handleLogin} className="w-full max-w-md">
-            <div className="flex justify-center mx-auto text-5xl text-[#0060f0e6]">
+          <form onSubmit={handleLogin} className="w-full max-w-md border p-4">
+            <div className="flex justify-center mx-auto text-5xl text-white">
               <FaUser></FaUser>
             </div>
 
@@ -94,11 +113,7 @@ const Login = () => {
             </div>
 
             <div className="mt-6">
-              <input
-                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-                type="submit"
-                value="Login"
-              />
+              <input className="myBtn w-full " type="submit" value="Login" />
 
               <div className="mt-6 text-center ">
                 <p>
